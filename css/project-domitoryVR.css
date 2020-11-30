@@ -9,8 +9,14 @@
     font-family: "함초롬돋움";
 }
 
-#img2 {
+#img-float-right {
     width: 30%;
     height: 40%;
     float: right;
+}
+
+video {
+    
+    width: 70%;
+    height: 100%;
 }

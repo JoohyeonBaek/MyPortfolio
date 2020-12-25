@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>        
+<head>
+    <title>PC방 좌석 예약 시스템 설계</title>
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+    
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+</head>
+
+<body id="projectbody">
+    <div id="body">
+        
+        <div id="title">UML을 활용한 PC방 좌석 예약 시스템 설계</div>
+        <div id="title-english">Design of PC Room Seat Reservation System Using UML</div>        
+
+        <div class="subtitle">1. 소개</div>
+        <div class="subbody">
+            <ul>
+                <li>PC방 실시간 잔여 좌석 안내 및 예약 시스템을 개발하기 위해 UML을 사용하여 설계</li>
+                <li>사용자 요구사항과 각종 Diagram을 작성함으로서 개발 과정에서 발생하는 개발자와 설계자, 사용자 간의 대화 불일치를 방지 및 목표 시스템의 목적과 기능을 명확히 함</li>
+            </ul>
+        </div>        
+
+        <div class="subtitle">2. 시스템 구조도</div>
+        <div class="subbody">
+            <img id="img-float-right" src="./img/project/UML_Project/시스템구조.png">
+            <ul>
+                <li>회원정보관리</li>
+                    <ul>
+                        <li>사용자가 회원가입 시 회원 정보가 회원 정보 DB에 저장</li>
+                        <li>이 DB를 통해 회원 정보관리 및 로그인을 진행</li>
+                    </ul>
+                <br>
+                <li>PC방 정보 검색</li>
+                    <ul>
+                        <li>PC방 정보 DB를 이용하여 PC방을 검색</li>
+                        <li>검색결과에 부합하는 PC방 정보 DB에서 찾아 출력</li>
+                        <li>관리자는 PC방 정보 DB에 접근해 PC방 정보를 수정</li>
+                    </ul>
+                <br>
+                <li>예약</li>
+                    <ul>
+                        <li>예약 시 선택한 좌석 정보를 좌석 DB에 저장</li>
+                        <li>예약 시 사용자 DB 정보를 통해 미성년자인지 아닌지 검사</li>
+                        <li>사용자 DB와 좌석 Db를 함께 예약 DB에 저장</li>
+                        <li>사용자 DB정보와 좌석 DB정보를 통해 보증금 결제 진행</li>
+                    </ul>
+                <br>
+                <li>예약 DB</li>
+                    <ul>
+                        <li>보증금을 결제후 결제 정보를 예약 DB에 저장</li>
+                        <li>보증금 결제 후 예약 취소 시 예약 DB정보를 통해 보증금 환불</li>
+                        <li>예약 DB을 통해 보증금 반환</li>
+                    </ul>
+                <br>   
+            </ul>
+        </div>
+
+        <div class="subtitle">3. 설계 및 구현</div>
+        <div class="subbody">
+            <ul>
+                <li>Usecase Diagram</li>
+                <img src="./img/project/UML_Project/Usecase Diagram.png">                
+            </ul>
+            
+            <table>
+                <tr>
+                    <td>Usecase ID</td>
+                    <td>Usecase 내용</td>
+                    <td>처리 흐름</td>
+                </tr>
+            
+                <tr>
+                    <td>UD-01</td>
+                    <td>회원가입을 한다</td>
+                    <td>
+                        <ul>
+                            <li style="text-align: left;">회원 사용자는 회원가입에 필요한 정보를 입력한다</li>
+                            <li>한 사용자가 여러 개의 계정을 사용하려 하는지 검사한다</li>
+                            <li>아이디가 중복되었는지 검사한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-02</td>
+                    <td>아이디, 비밀번호를 찾는다</td>
+                    <td>
+                        <ul>
+                            <li>회원 사용자가 아이디, 비밀번호를 분실하였을 경우 회원가입 시 입력한 이름, 생년월일, 휴대폰 통신사, 휴대폰 번호를 입력하여 아이디 비밀번호를 찾는다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-03</td>
+                    <td>비밀번호를 변경한다</td>
+                    <td>
+                        <ul>
+                            <li>회원 사용자가 비밀번호 변경을 희망할 시 회원가입 시 입력한 이름, 생년월일, 아이디, 비밀번호를 통해 비밀번호를 변경한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-04</td>
+                    <td>회원정보를 삭제한다</td>
+                    <td>
+                        <ul>
+                            <li>회원 사용자가 회원 정보 삭제를 희망할 시 회원가입 시 입력한 이름, 생년월일, 아이디, 비밀번호를 통해 회원 정보를 삭제한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-05</td>
+                    <td>로그인을 한다</td>
+                    <td>
+                        <ul>
+                            <li>회원 사용자는 회원가입 시 입력한 아이디 비밀번호를 입력해 로그인을 한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-06</td>
+                    <td>PC방 정보를 검색한다</td>
+                    <td>
+                        <ul>
+                            <li>사용자는 PC방 정보를 검색한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-07</td>
+                    <td>조건 검색을 한다</td>
+                    <td>
+                        <ul>
+                            <li>사용자는 조건을 설정하여 검색한다</li>
+                            <li>조건을 설정 안 할 시 기본 값으로 PC방을 검색한다</li>                                   
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-08</td>
+                    <td>좌석을 예약한다</td>
+                    <td>
+                        <ul>
+                            <li>회원 사용자는 예약 가능한 좌석을 선택한다</li>
+                            <li>회원 사용자는 시작 희망시간을 선택한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-09</td>
+                    <td>결제를 한다</td>
+                    <td>
+                        <ul>
+                            <li>회원 카드 결제 혹은 휴대폰 결제를 한다</li>
+                            <li>카드 결제 시 카드 회사명, 카드번호, 카드 CVC번호를 입력한다</li>
+                            <li>휴대폰 결제지 휴대폰 통신사, 휴대폰 번호를 입력한다</li>
+                            <li>회원 사용자는 보증금 결제를 완료한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-10</td>
+                    <td>예약을 취소한다</td>
+                    <td>
+                        <ul>
+                            <li>결제한 사용자는 예약 취소 희망 시 결제에 사용된 정보를 입력한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-11</td>
+                    <td>환불을 받는다</td>
+                    <td>
+                        <ul>
+                            <li>취소를 한 시간이 예약 희망시작 30분~15분 사이면 보증금을 반환받는다</li>
+                            <li>결제 시 사용한 수단으로 환불이 진행된다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-12</td>
+                    <td>PC방 정보를 수정한다</td>
+                    <td>
+                        <ul>
+                            <li>관리자는 수정할 PC방 정보가 있을 시 PC방 정보를 수정한다.</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-13</td>
+                    <td>등급제를 설정한다</td>
+                    <td>
+                        <ul>
+                            <li>사용내역에 따른 회원 등급을 설정한다</li>
+                        </ul>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>UD-14</td>
+                    <td>사용금액 내역을 검색한다</td>
+                    <td>
+                        <ul>
+                            <li>외부 PC방 시스템으로부터 사용금액 내역 정보를 제공받는다</li>
+                        </ul>
+                    </td>
+                </tr>                    
+            </table>
+            
+        </div>
+
+        <div class="subtitle">5. 결과</div>
+        <div class="subbody">결과</div>
+    </div> 
+</body>
+</html>

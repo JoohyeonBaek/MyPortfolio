@@ -46,8 +46,45 @@ h1 {
     padding-right: 5%;
     font-size: 110%;
     margin-bottom: 3%;
-    font-family: "휴먼명조";
+    font-family: "함초롬돋움";
     height: auto;
     overflow: hidden;               
 }
 
+.table {    
+    border: 2px solid #444444;    
+}
+
+.th, td {
+    border: 2px solid #444444;    
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.ul, li {
+    text-align: left;
+}
+
+#img1 {
+    width: 20%;
+    height: 10%;    
+}
+
+#img1-text {
+    width: 20%;
+    text-align: center;
+    font-family: "함초롬돋움";
+}
+
+#img-float-right {
+    width: 30%;
+    height: 40%;
+    float: right;
+}
+
+video {
+    
+    width: 70%;
+    height: 100%;
+}

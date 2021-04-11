@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>        
+<head>
+    <title>Toilet Project</title>
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+    <link rel="stylesheet" type="text/css" href="css/project-toilet.css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+</head>
+
+<body id="projectbody">
+    <div id="body">
+        
+        <div id="title">공공데이터를 활용한 전국 공중 화장실 위치 및 정보 제공 서비스</div>
+        <div id="title-english">Public toilet information service</div>
+
+        <footer class="footer text-center" id="contact" style="padding-top: 0%; padding-bottom: 3%;">
+            <div class="container">           
+                <li class="list-inline-item">
+                  <a class="social-link rounded-circle text-white" href="https://github.com/JoohyeonBaek/PublicToilet" target="_blank">
+                    <i class="icon-social-github"></i>
+                  </a>
+                </li>
+            </div>
+        </footer>
+
+        <div class="subtitle">1.프로젝트 소개</div>
+        <div class="subbody">
+            <ul>
+                <li>주요기능</li>
+                <ul>
+                    <li>현재 사용자가 위치한 지역의 화장실 중 가장 가까운 화장실의 정보 제공</li>
+                    <li>사용자 희망 조건을 충족하는 화장실 정보 제공</li>
+                </ul>
+                <li>주제 선정 이유</li>
+                <ul>
+                    <li>사용할 수 있는 주변의 화장실을 급하게 찾았던 경험</li>
+                    <li>사용자 희망 조건을 충족하는 화장실 정보 제공</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="subtitle">2. 개발환경</div>
+        <div class="subbody">
+            <ul>
+                <li>Client</li>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                </ul>
+                <li>Server</li>
+                <ul>
+                    <li>Django</li>
+                </ul>
+                <li>Database</li>
+                <ul>
+                    <li>MariaDB</li>
+                </ul>
+                <li>Map API</li>
+                <ul>
+                    <li>Naver Map API</li>
+                </ul>
+                
+            </ul>
+        </div>
+
+        <div class="subtitle">3. 데이터 수집 및 출처</div>
+        <div class="subbody">
+            <ul>
+                <li>화장싱 위치정보</li>
+                <li>화장실 상세정보</li>
+                <li>공공데이터 포털</li>
+                <li>공공데이터 포털: <a href="https://www.data.go.kr/tcs/lms/liv/selectLocationView.do" target="blank">https://www.data.go.kr/tcs/lms/liv/selectLocationView.do</a></li>
+            </ul>
+        </div>
+
+        <div class="subtitle">4. 기능</div>
+        <div class="subbody">
+            <ol>
+                <li>Main page</li>
+                <img id="mainpage" src="./img/project/toilet/toilet1.png">                
+                <ul>
+                    <li>사용자 주변 화장실 검색 기능</li>
+                    <li>조건설정을 통한 화장실 검색 기능</li>
+                    <li>각 버튼 클릭 시 해당하는 화면 출력</li>
+                </ul>
+                <br>
+                <li>사용자 주변 화장실 검색 기능</li>
+                <img id="useraroundimage1" src="./img/project/toilet/toilet2.png">
+                <img id="useraroundimage2" src="./img/project/toilet/toilet3.png">
+                <ul>                    
+                    <li>사용자가 현재 위치한 지역의 화장실 지도 출력</li>
+                    <li>사용자의 현재 위치 지도상에 마커로 표시 (붉은색 마커)</li>
+                    <li>사용자가 현재 위치한 지역의 화장실 위치 지도상에 마커로 표시 (푸른색 마커)</li>
+                    <li>사용자가 현재 위치한 지역의 경계선 출력</li>                    
+                    <li>사용자와 가낭 가까운 화장실의 정보 자동 출력</li>                                      
+                </ul>
+                <br>
+                <li>화장실 조건 검색 기능</li>
+                <img id="optionimage" src="./img/project/toilet/toilet4.png">
+                <ul>
+                    <li>검색 희망 지역 선택 (전국)</li>
+                    <li>개방시간 조건 설정</li>
+                    <li>남여공용화장실 여부</li>
+                    <li>남/녀 장애인 변기 유무</li>
+                    <li>남/녀 어린이용 변기 유무</li>
+                    <li>위 조건에 해당하는 화장실 지도 출력</li>
+                    <li>조건 선택 후 찾아보기 버튼 클릭 시 화장실 지도 출력</li>
+                </ul>
+                <br>
+            </ol>
+        </div>
+
+        
+    </div> 
+</body>
+</html>
